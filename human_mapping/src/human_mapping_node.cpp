@@ -13,6 +13,8 @@ typedef signed char uint8 ;
 #define NCellsX (float)(MaxRangeX/CELL_RESOLUTION)
 #define NCellsY (float)(MaxRangeY/CELL_RESOLUTION)
 
+
+
 #define HUMAN_DISTRIBUTION_RANGE 1.0
 #define CO_MATRIX_WIDTH (float)(HUMAN_DISTRIBUTION_RANGE/CELL_RESOLUTION)
 #define CO_MATRIX_HEIGHT (float)(HUMAN_DISTRIBUTION_RANGE/CELL_RESOLUTION)
