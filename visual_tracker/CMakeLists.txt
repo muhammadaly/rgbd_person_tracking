@@ -15,6 +15,10 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
 )
 
+
+set(OpenCV_INCLUDE_DIR "/usr/local/include")
+set(OpenCV_LIBS  "opencv_core;opencv_highgui;opencv_imgproc;opencv_features2d;opencv_imgcodecs;opencv_flann;opencv_xfeatures2d")
+
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 find_package(OpenCV REQUIRED)

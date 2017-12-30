@@ -1,0 +1,6 @@
+<launch>
+    <include file="$(find people_detection)/launch/people_detection_complete.launch" />
+    <include file="$(find openni_launch)/launch/openni.launch" />
+    <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="$(find human_mapping)/config/human_mapping.rviz" />
+    <node name="human_mapping" pkg="human_mapping" type="human_mapping_node" output="screen" />
+</launch>

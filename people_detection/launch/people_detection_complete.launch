@@ -1,5 +1,5 @@
 <launch>
-		<arg name="prefix" value="/top_camera" />
+                <arg name="prefix" value="/camera" />
 		<node name="ground_detector" pkg="ground_detector" type="ground_detector_node" output="screen">
 			<param name="theta" value="12"/> <!-- xtion tilt angle -->
 			<param name="ty" value="1.5"/> <!-- xtion y traslation -->
@@ -18,10 +18,10 @@
 			<param name="camera_info_topic" value="$(arg prefix)/depth/camera_info" />
 			<param name="rgb_topic" value="$(arg prefix)/rgb/image_raw" />			
 		</node>
-		
-		<node name="dispatcher_node" pkg="dispatcher_node" type="dispatcher_node" output="screen">
-			<param name="min" value="1.5"/> <!-- min value for tracking only the face -->
-		</node>
+
+                <node name="dispatcher_node" pkg="dispatcher_node" type="dispatcher_node" output="screen">
+                        <param name="min" value="1.5"/> <!-- min value for tracking only the face -->
+                </node>
 		
 		<node name="people_detector" pkg="people_detection" type="people_detection_node" output="screen">
 			<param name="dataset" value="$(find people_detection)/config/inria_detector.xml"/> <!-- dataset filename -->

@@ -59,12 +59,12 @@ KalmanFilter::KalmanFilter(const int &_x, const int &_y, const int &_w, const in
     KF.statePost.at<float>(5) = _h;
 
 
-    KF.transitionMatrix = *(cv::Mat_<float>(6, 6) << 1,0,dt,0,0,0,
+    KF.transitionMatrix = cv::Mat_<float>(6, 6) << 1,0,dt,0,0,0,
                                                      0,1,0,dt,0,0,
                                                      0,0,1,0,0,0,
                                                      0,0,0,1,0,0,
                                                      0,0,0,0,1,0,
-                                                     0,0,0,0,0,1);
+                                                     0,0,0,0,0,1;
 
     KF.measurementMatrix = cv::Mat::zeros(4, 6, CV_32F);
     KF.measurementMatrix.at<float>(0) = 1.0f;

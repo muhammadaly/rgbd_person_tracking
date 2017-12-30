@@ -74,8 +74,11 @@ void Tracker::track(const std::vector<detection_struct> &_detections, const cv::
 
     detections_ = _detections;
 
-    cv::Ptr<cv::FeatureDetector> detector = new cv::FastFeatureDetector;
-    cv::Ptr<cv::DescriptorExtractor> extractor = new cv::SurfDescriptorExtractor;
+    cv::Ptr<cv::FastFeatureDetector> detector = cv::FastFeatureDetector::create(80, true);
+//    cv::Ptr<cv::SurfDescriptorExtractor> extractor = new cv::SurfDescriptorExtractor;
+    double minHessian = 400.0;
+    cv::Ptr<cv::xfeatures2d::SURF>    extractor = cv::xfeatures2d::SURF::create( minHessian);
+
     detector->detect(_image, keypoints_);
     extractor->compute(_image, keypoints_, descriptors_);
 

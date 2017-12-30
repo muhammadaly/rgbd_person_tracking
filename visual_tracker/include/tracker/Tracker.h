@@ -41,7 +41,9 @@
 #include <thread>
 #include <functional>
 #include <mutex>
-#include <nonfree/features2d.hpp>
+//#include <nonfree/features2d.hpp>
+#include "opencv2/xfeatures2d.hpp"
+
 #include <people_msgs/Tracks.h>
 
 namespace tracker
